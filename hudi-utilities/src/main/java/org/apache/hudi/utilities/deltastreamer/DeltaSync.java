@@ -457,6 +457,7 @@ public class DeltaSync implements Serializable {
         + hiveSyncConfig.jdbcUrl + ", basePath :" + cfg.targetBasePath);
     HiveConf hiveConf = new HiveConf(conf, HiveConf.class);
     LOG.info("Hive Conf => " + hiveConf.getAllProperties().toString());
+    LOG.info("Hive Sync Conf => " + hiveSyncConfig.toString());
     new HiveSyncTool(hiveSyncConfig, hiveConf, fs).syncHoodieTable();
   }
 
